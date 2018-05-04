@@ -1,0 +1,271 @@
+@extends ('layouts.master')
+
+@section ('content')
+<!-- Carousel starts -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        @foreach($carousel as $key => $data)
+            <li data-target="#carousel-example-generic" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
+        @endforeach
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        @foreach($carousel as $key => $data)
+            <div class="carousel-item {{ $loop->first ? ' active' : '' }}" >
+                <img src={{$data->image_carousel}}>
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <h1>{{$data->text_carousel}}</h1>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+
+    <!-- Controls -->
+    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+<!-- Carousel ends -->
+
+<!-- Wrap the rest of the page in another container to center all the content. -->
+<div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+        <div class="col-lg-4">
+            @foreach($fasiliti_icon as $key => $data)
+                <img class="rounded-circle" src={{$data->image_url}} alt="Generic placeholder image" width="140" height="140">
+            @endforeach
+            <h2>Fasiliti masjid</h2>
+            <p></p>
+            <p>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#fasiliti">View details >></button>
+                <div id="fasiliti" class="collapse">
+                    <div class="table-responsive">          
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Bilangan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($fasiliti as $key => $data)
+                                    <tr>    
+                                        <th>{{$data->nama_fasiliti}}</th>
+                                        <th>{{$data->bil_fasiliti}}</th>               
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </p>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+            @foreach($ceramah_icon as $key => $data)
+                <img class="rounded-circle" src={{$data->image_url}} alt="Generic placeholder image" width="140" height="140">
+            @endforeach
+            <h2>Ceramah agama</h2>
+            <p></p>
+            <p>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#ceramah">View details >></button>
+                <div id="ceramah" class="collapse">
+                    <div class="table-responsive">          
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Tajuk</th>
+                                    <th>Tarikh</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($ceramah as $key => $data)
+                                    <tr>    
+                                        <th>{{$data->tajuk_ceramah}}</th>
+                                        <th>{{$data->tarikh_ceramah}}</th>               
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </p>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+            @foreach($khairat_icon as $key => $data)
+                <img class="rounded-circle" src={{$data->image_url}} alt="Generic placeholder image" width="140" height="140">
+            @endforeach
+            <h2>Khairat kematian</h2>
+            <p></p>
+            <p>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#khairat">View details >></button>
+                <div id="khairat" class="collapse">
+                    @foreach($khairat_comment as $key => $data)
+                        <p>{{$data->comment}}</p>
+                    @endforeach
+
+                    @foreach($khairat_borang as $key => $data)
+                        <a href={{$data->path_location}}>{{$data->description}}</a>
+                    @endforeach
+
+                    <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#khairat_downloads">
+                        Downloads
+                    </button>
+
+                    <!-- The Modal -->
+                    <div class="modal fade" id="khairat_downloads">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+      
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Download Borang</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+        
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <div class="table-responsive">          
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Bil</th>
+                                                    <th>Borang</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($khairat_borang as $key => $data)
+                                                    <tr>    
+                                                        <th>{{$data->id}}</th>
+                                                        <th><a href={{$data->path_location}}>{{$data->description}}</a></th>               
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+        
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p>
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->   
+
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <!-- Aktiviti masjid starts -->
+            <p></p><p></p>
+            <h3 class="pb-3 mb-4 font-italic border-bottom">
+                Aktiviti Masjid
+            </h3>
+            <div class="table-responsive">          
+                <table class="table table-striped">
+                    <!-- thead starts
+                    <thead>
+                        <tr>
+                            <th>Tarikh</th>
+                            <th>Nama Aktiviti</th>
+                            <th>Masa</th>
+                            <th>Tempat</th>
+                        </tr>
+                    </thead>
+                    thead ends -->
+                    <tbody>
+                        @foreach($aktiviti as $key => $data)
+                            <tr>    
+                                <th>{{$data->tarikh_aktiviti}}</th> 
+                                <th>{{$data->nama_aktiviti}}</th>
+                                <th>{{$data->masa_aktiviti}}</th>
+                                <th>{{$data->tempat_aktiviti}}</th>           
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- card starts
+            @foreach($aktiviti as $key => $data)
+                <div class="col-md-12">
+                    <div class="card mb-3 border-dark">
+                        <div class="card-header bg-transparent border-dark">{{$data->tarikh_aktiviti}}</div>
+                        <div class="card-body ">
+                            <h5 class="card-title">{{$data->nama_aktiviti}}</h5>
+                            <p class="card-text">Bertempat di {{$data->tempat_aktiviti}}</p>
+                            <a href="#" class="btn btn-primary">Details</a>
+                        </div>
+                        <div class="card-footer bg-transparent border-dark">{{$data->masa_aktiviti}}</div>
+                    </div>
+                </div>
+            @endforeach
+            card ends-->
+            <!-- Aktiviti masjid ends -->
+
+            <!-- Makluman masjid starts -->
+            <p></p><p></p>
+            <h3 class="pb-3 mb-4 font-italic border-bottom">
+                Makluman Masjid
+            </h3>
+            @foreach($makluman as $key => $data)
+                <div class="col-md-12">
+                    <div class="card flex-md-row mb-4 box-shadow h-md-250 ">
+                        <div class="card-body d-flex flex-column align-items-start">          
+                            <h3 class="mb-0">
+                                <a class="text-dark" href="#">{{$data->tajuk_makluman}}</a>
+                            </h3>
+                            <div class="mb-1 text-muted">{{$data->tarikh_makluman}}</div>
+                            <p class="card-text mb-auto">{{$data->isi_makluman}}</p>
+                            <a href="#" class="btn btn-sm btn-outline-secondary">Details</a>
+                        </div>
+                        <img class="card-img-right flex-auto d-none d-md-block" width="180" height="230" src={{$data->image_makluman}} alt="Card image cap">
+                    </div>
+                </div>
+            @endforeach
+            <!-- Makluman masjid ends -->
+        </div><!-- /.blog-main -->
+          
+        <!-- Sidebar starts -->
+        <aside class="col-md-4 blog-sidebar">        
+            <div class="p-3">
+                <p></p><p></p>
+                <h4 class="pb-3 mb-4 font-italic border-bottom">Archives</h4>
+                <ol class="list-unstyled mb-0">
+                    <li><a href="#">March 2014</a></li>
+                    <li><a href="#">February 2014</a></li>
+                    <li><a href="#">January 2014</a></li>
+                    <li><a href="#">December 2013</a></li>
+                    <li><a href="#">November 2013</a></li>
+                    <li><a href="#">October 2013</a></li>
+                    <li><a href="#">September 2013</a></li>
+                    <li><a href="#">August 2013</a></li>
+                    <li><a href="#">July 2013</a></li>
+                    <li><a href="#">June 2013</a></li>
+                    <li><a href="#">May 2013</a></li>
+                    <li><a href="#">April 2013</a></li>
+                </ol>
+            </div>
+        </aside><!-- /.blog-sidebar -->
+        <!-- Sidebar ends -->
+    </div><!-- /.row -->
+</div><!-- /.container -->
+@endsection
+
+
+
