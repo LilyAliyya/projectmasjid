@@ -8,27 +8,30 @@
     <div class="row">
         <div class="col-md-8 blog-main">
             <p></p><p></p>
-            <!-- Biro masjid starts -->
+            <!-- Grid aktiviti starts -->
             <h3 class="pb-3 mb-4 font-italic border-bottom">
-                Biro Masjid
+                Grid Aktiviti
             </h3>
 
             <div class="container">
                 <div class="row">
-                    @foreach($biromasjid as $key => $data)
+                    @foreach($aktiviti as $key => $data)
                         <div class="col-md-4">
                             <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" width="250" height="200" src={{$data->gambar_ahli}} alt="Card image cap">
-                                <div class="card-body">
-                                    <p class="card-text"><i class="fa fa-user-circle mr-3"></i>{{$data->nama_ahli}}</p>
-                                    <p class="card-text"><i class="fa fa-id-card mr-3"></i>{{$data->nama_biro}}</p>
-                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">{{$data->nama_aktiviti}}</li>
+                                    <li class="list-group-item"><i class="fa fa fa-calendar mr-3"></i>{{$data->tarikh_aktiviti}}</li>
+                                    <li class="list-group-item"><i class="fa fa fa fa-clock-o mr-3"></i>{{$data->masa_aktiviti}}</li>
+                                    <li class="list-group-item"><i class="fa fa fa-map-marker mr-3"></i>{{$data->tempat_aktiviti}}</li>
+                                </ul>
                             </div>
                         </div>
                     @endforeach
                 </div>
             </div>
-            <!-- Biro masjid ends -->
+
+            {{ $aktiviti->links() }}
+            <!-- Grid aktiviti ends -->
         </div><!-- /.blog-main -->
           
         <!-- Sidebar starts -->

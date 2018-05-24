@@ -8,27 +8,19 @@
     <div class="row">
         <div class="col-md-8 blog-main">
             <p></p><p></p>
-            <!-- Biro masjid starts -->
+            <!-- Sejarah penubuhan starts -->
             <h3 class="pb-3 mb-4 font-italic border-bottom">
-                Biro Masjid
+                Sejarah Penubuhan Masjid
             </h3>
 
             <div class="container">
-                <div class="row">
-                    @foreach($biromasjid as $key => $data)
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" width="250" height="200" src={{$data->gambar_ahli}} alt="Card image cap">
-                                <div class="card-body">
-                                    <p class="card-text"><i class="fa fa-user-circle mr-3"></i>{{$data->nama_ahli}}</p>
-                                    <p class="card-text"><i class="fa fa-id-card mr-3"></i>{{$data->nama_biro}}</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="blog-post">
+                    @foreach($penubuhan as $key => $data)
+                        <p>{{$data->content_penubuhan}}</p>
                     @endforeach
-                </div>
+                </div><!-- /.blog-post -->
             </div>
-            <!-- Biro masjid ends -->
+            <!-- Sejarah penubuhan ends -->
         </div><!-- /.blog-main -->
           
         <!-- Sidebar starts -->

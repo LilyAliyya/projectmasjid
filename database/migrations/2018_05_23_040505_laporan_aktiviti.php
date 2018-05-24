@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class FasilitiMasjid extends Migration
+class LaporanAktiviti extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class FasilitiMasjid extends Migration
      */
     public function up()
     {
-        Schema::create('fasiliti_masjid', function (Blueprint $table) {
+        Schema::create('laporan_aktiviti', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama_fasiliti');
-            $table->integer('bil_fasiliti');
+            $table->date('tarikh_laporan');
+            $table->string('tajuk_laporan');
+            $table->longtext('isi_laporan');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class FasilitiMasjid extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fasiliti_masjid');
+        Schema::dropIfExists('laporan_aktiviti');
     }
 }

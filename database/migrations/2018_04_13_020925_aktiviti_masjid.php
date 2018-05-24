@@ -15,7 +15,7 @@ class AktivitiMasjid extends Migration
     {
         Schema::create('aktiviti_masjid', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tarikh_aktiviti');
+            $table->date('tarikh_aktiviti');
             $table->text('nama_aktiviti');
             $table->string('masa_aktiviti');
             $table->string('tempat_aktiviti');

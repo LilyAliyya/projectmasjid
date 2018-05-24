@@ -16,7 +16,7 @@ class CeramahAgama extends Migration
         Schema::create('ceramah_agama', function (Blueprint $table) {
             $table->increments('id');
             $table->text('tajuk_ceramah');
-            $table->string('tarikh_ceramah');
+            $table->date('tarikh_ceramah');
             $table->timestamps();
         });
     }

@@ -114,16 +114,19 @@
                         <p>{{$data->comment}}</p>
                     @endforeach
 
-                    @foreach($khairat_borang as $key => $data)
-                        <a href={{$data->path_location}}>{{$data->description}}</a>
-                    @endforeach
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#sign_in">
+                            Sign In
+                        </button>    
+                        <button type="button" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#sign_up">
+                            Sign Up
+                        </button>
+                        <button type="button" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#khairat_downloads">
+                            Downloads
+                        </button>
+                    </div>
 
-                    <!-- Button to Open the Modal -->
-                    <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#khairat_downloads">
-                        Downloads
-                    </button>
-
-                    <!-- The Modal -->
+                    <!-- Modal download borang starts -->
                     <div class="modal fade" id="khairat_downloads">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
@@ -163,7 +166,99 @@
         
                             </div>
                         </div>
-                    </div>
+                    </div> <!-- Modal download borang ends --> 
+
+                    <!-- Modal sign up starts -->
+                    <div class="modal fade" id="sign_up">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+      
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Sign Up</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+        
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <form class="modal-body" action="/action_page.php">
+                                        <div class="form-container">
+      
+                                            <label for="email"><b>Email</b></label>
+                                            <input type="text" placeholder="Enter Email" name="email" class="form-input" required>
+
+                                            <label for="psw"><b>Password</b></label>
+                                            <input type="password" placeholder="Enter Password" name="psw" class="form-input" required>
+
+                                            <label for="psw-repeat"><b>Repeat Password</b></label>
+                                            <input type="password" placeholder="Repeat Password" name="psw-repeat" class="form-input" required>
+                                            
+                                            <label>
+                                                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                                            </label>
+
+                                            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+                                            <div class="clearfix">
+                                                <button type="button" class="cancelbtn btn btn-danger" data-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="signupbtn btn btn-success">Sign Up</button>
+                                            </div>
+                                        </div>
+                                    </form>     
+                                </div>
+        
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </div> <!-- Modal sign up ends --> 
+
+                    <!-- Modal sign in starts -->
+                    <div class="modal fade" id="sign_in">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+      
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Sign In</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+        
+                                <!-- Modal body -->
+                                <div class="modal-body">     
+                                    <form class="modal-body" action="/action_page.php">
+                                        <div class="form-container">
+      
+                                            <label for="email"><b>Email</b></label>
+                                            <input type="text" placeholder="Enter Email" name="email" class="form-input" required>
+
+                                            <label for="psw"><b>Password</b></label>
+                                            <input type="password" placeholder="Enter Password" name="psw" class="form-input" required>
+
+                                            <label>
+                                                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                                            </label>
+                                            
+                                            <div class="clearfix">
+                                                <button type="button" class="cancelbtn btn btn-danger" data-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="signupbtn btn btn-success">Sign In</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+        
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </div> <!-- Modal sign in ends --> 
+
                 </div>
             </p>
         </div><!-- /.col-lg-4 -->
@@ -194,7 +289,37 @@
                                 <th>{{$data->tarikh_aktiviti}}</th> 
                                 <th>{{$data->nama_aktiviti}}</th>
                                 <th>{{$data->masa_aktiviti}}</th>
-                                <th>{{$data->tempat_aktiviti}}</th>           
+                                <th>{{$data->tempat_aktiviti}}</th> 
+                                <th>
+                                    <button type="button" class="btn btn-sm btn-outline-info" data-toggle="modal" data-target="#aktiviti">
+                                        Details
+                                    </button>
+
+                                    <!-- The Modal -->
+                                    <div class="modal fade" id="aktiviti">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                    
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">{{$data->nama_aktiviti}}</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                        
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                
+                                                </div>
+                        
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>           
                             </tr>
                         @endforeach
                     </tbody>
@@ -232,7 +357,7 @@
                             </h3>
                             <div class="mb-1 text-muted">{{$data->tarikh_makluman}}</div>
                             <p class="card-text mb-auto">{{$data->isi_makluman}}</p>
-                            <a href="#" class="btn btn-sm btn-outline-secondary">Details</a>
+                            <!-- <a href="#" class="btn btn-sm btn-outline-secondary">Details</a> -->
                         </div>
                         <img class="card-img-right flex-auto d-none d-md-block" width="180" height="230" src={{$data->image_makluman}} alt="Card image cap">
                     </div>

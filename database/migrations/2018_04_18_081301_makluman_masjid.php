@@ -15,8 +15,8 @@ class MaklumanMasjid extends Migration
     {
         Schema::create('makluman_masjid', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('tajuk_makluman');
-            $table->string('tarikh_makluman');
+            $table->string('tajuk_makluman');
+            $table->date('tarikh_makluman');
             $table->longtext('isi_makluman');
             $table->string('image_makluman');
             $table->timestamps();

@@ -8,27 +8,31 @@
     <div class="row">
         <div class="col-md-8 blog-main">
             <p></p><p></p>
-            <!-- Biro masjid starts -->
+            <!-- Makluman semasa starts -->
             <h3 class="pb-3 mb-4 font-italic border-bottom">
-                Biro Masjid
+                Makluman Semasa
             </h3>
 
             <div class="container">
-                <div class="row">
-                    @foreach($biromasjid as $key => $data)
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" width="250" height="200" src={{$data->gambar_ahli}} alt="Card image cap">
-                                <div class="card-body">
-                                    <p class="card-text"><i class="fa fa-user-circle mr-3"></i>{{$data->nama_ahli}}</p>
-                                    <p class="card-text"><i class="fa fa-id-card mr-3"></i>{{$data->nama_biro}}</p>
-                                </div>
+                @foreach($makluman as $key => $data)
+                    <div class="col-md-12">
+                        <div class="card flex-md-row mb-4 box-shadow h-md-250 ">
+                            <div class="card-body d-flex flex-column align-items-start">          
+                                <h3 class="mb-0">
+                                    <a class="text-dark" href="#">{{$data->tajuk_makluman}}</a>
+                                </h3>
+                                <div class="mb-1 text-muted">{{$data->tarikh_makluman}}</div>
+                                <p class="card-text mb-auto">{{$data->isi_makluman}}</p>
+                                <!-- <a href="#" class="btn btn-sm btn-outline-secondary">Details</a> -->
                             </div>
+                            <img class="card-img-right flex-auto d-none d-md-block" width="180" height="230" src={{$data->image_makluman}} alt="Card image cap">
                         </div>
-                    @endforeach
-                </div>
+                    </div>
+                @endforeach
             </div>
-            <!-- Biro masjid ends -->
+
+            {{ $makluman->links() }}
+            <!-- Makluman semasa ends -->
         </div><!-- /.blog-main -->
           
         <!-- Sidebar starts -->
