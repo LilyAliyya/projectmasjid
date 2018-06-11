@@ -29,5 +29,13 @@ Route::get('/makluman', 'MaklumanController@database');
 
 Route::get('/laporanaktiviti', 'LaporanAktivitiController@database');
 
+Route::get('/videokhutbah', 'VideoKhutbahController@database');
+
+Route::get('/kuliahharian', 'KuliahHarianController@database');
 
 
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

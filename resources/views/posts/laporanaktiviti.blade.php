@@ -3,7 +3,7 @@
 @section ('content')
 
 <!-- Wrap the rest of the page in another container to center all the content. -->
-<div class="container marketing">
+<div class="container threecolumns">
 
     <div class="row">
         <div class="col-md-8 blog-main">
@@ -16,9 +16,9 @@
             <div class="container">
                 @foreach($laporan as $key => $data)
                     <div class="card">
-                        <div class="card-header">
+                        <h5 class="card-header">
                             {{$data->tajuk_laporan}}   
-                        </div>
+                        </h5>
                         <div class="card-body">
                             <p class="card-text">{{$data->isi_laporan}}</p>
                         </div>

@@ -35,7 +35,7 @@
 <!-- Carousel ends -->
 
 <!-- Wrap the rest of the page in another container to center all the content. -->
-<div class="container marketing">
+<div class="container threecolumns">
 
     <!-- Three columns of text below the carousel -->
     <div class="row">
@@ -115,12 +115,16 @@
                     @endforeach
 
                     <div class="btn-group" role="group" aria-label="Basic example">
+                        
                         <button type="button" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#sign_in">
                             Sign In
                         </button>    
                         <button type="button" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#sign_up">
                             Sign Up
                         </button>
+                        
+                        
+                        <a class="btn btn-sm btn-outline-dark" href="home" role="button">Dashboard</a>
                         <button type="button" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#khairat_downloads">
                             Downloads
                         </button>
@@ -183,6 +187,9 @@
                                 <div class="modal-body">
                                     <form class="modal-body" action="/action_page.php">
                                         <div class="form-container">
+
+                                            <label for="name"><b>Name</b></label>
+                                            <input type="text" placeholder="Enter Name" name="name" class="form-input" required>
       
                                             <label for="email"><b>Email</b></label>
                                             <input type="text" placeholder="Enter Email" name="email" class="form-input" required>

@@ -37,6 +37,15 @@
             
           </div>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KHUTBAH & CERAMAH</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown09">
+
+            <a class="dropdown-item" href="videokhutbah">VIDEO KHUTBAH</a>
+            <a class="dropdown-item" href="kuliahharian">KULIAH HARIAN</a>
+            
+          </div>
+        </li>
       </ul>
       <form class="form-inline my-2 my-md-0">
         <input class="form-control" type="text" placeholder="Search" aria-label="Search">

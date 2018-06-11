@@ -3,7 +3,7 @@
 @section ('content')
 
 <!-- Wrap the rest of the page in another container to center all the content. -->
-<div class="container marketing">
+<div class="container threecolumns">
 
     <div class="row">
         <div class="col-md-8 blog-main">
