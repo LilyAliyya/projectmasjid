@@ -6,23 +6,37 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
     color: #5a5a5a;
-    background-image: url("../img/bg.jpg");
-    background-repeat: no-repeat;
+    background-image: url("../img/background.jpg");
     background-attachment: fixed;
   }
-  
 
-  /* CUSTOMIZE BACKGROUND
+  /* CUSTOMIZE CONTENT
   -------------------------------------------------- */
 
-  .blog-bg {
+  /*
+  .content {
+    background-color: #FFFF99;
+  }
+  */
+
+  .content {
     background-color: #ffffff;
   }
-  
 
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+    
   /* CUSTOMIZE NAVBAR
   -------------------------------------------------- */
-  
+
+  .navigationbar {
+    background-color: #ffc107c9;
+    
+  }
 
   /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
@@ -117,6 +131,22 @@
   }
   
 
+  /* IMAGE MODAL
+  -------------------------------------------------- */
+  .zoom {
+    padding: 50px;
+    transition: transform .2s;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .zoom:hover {
+      -ms-transform: scale(1.5); /* IE 9 */
+      -webkit-transform: scale(1.5); /* Safari 3-8 */
+      transform: scale(1.5); 
+  }
+
   /* MAKLUMAN MASJID
   -------------------------------------------------- */
 
@@ -183,7 +213,6 @@
   -------------------------------------------------- */
 
   .footer {
-    background-color: #f1f1e4;
+    background-color: #ffc107c9;
   }
 
-    

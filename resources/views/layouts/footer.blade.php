@@ -19,16 +19,10 @@
                                 </h6>
                                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                                 <p>
-                                        <a href="#!" class="dark-grey-text">Link 1</a>
+                                        <a href="https://facebook.com/MasjidBBSB/" class="dark-grey-text">Facebook</a>
                                 </p>
                                 <p>
-                                        <a href="#!" class="dark-grey-text">Link 2</a>
-                                </p>
-                                <p>
-                                        <a href="#!" class="dark-grey-text">Link 3</a>
-                                </p>
-                                <p>
-                                        <a href="#!" class="dark-grey-text">Link 4</a>
+                                        <a href="http://e-masjid.jais.gov.my/index.php/profail/show/id/299" class="dark-grey-text">Portal JAIS</a>
                                 </p>
                         </div>
                         <!--/.Second column-->

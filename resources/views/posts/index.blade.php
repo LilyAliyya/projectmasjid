@@ -16,7 +16,7 @@
             <div class="carousel-item {{ $loop->first ? ' active' : '' }}" >
                 <img src={{$data->image_carousel}}>
                 <div class="container">
-                    <div class="carousel-caption text-left">
+                    <div class="carousel-caption">
                         <h1>{{$data->text_carousel}}</h1>
                     </div>
                 </div>
@@ -43,10 +43,10 @@
             @foreach($fasiliti_icon as $key => $data)
                 <img class="rounded-circle" src={{$data->image_url}} alt="Generic placeholder image" width="140" height="140">
             @endforeach
-            <h2>Fasiliti masjid</h2>
+            <h2>Fasiliti Masjid</h2>
             <p></p>
             <p>
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#fasiliti">View details >></button>
+                <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#fasiliti">Lihat details >></button>
                 <div id="fasiliti" class="collapse">
                     <div class="table-responsive">          
                         <table class="table table-striped">
@@ -74,10 +74,10 @@
             @foreach($ceramah_icon as $key => $data)
                 <img class="rounded-circle" src={{$data->image_url}} alt="Generic placeholder image" width="140" height="140">
             @endforeach
-            <h2>Ceramah agama</h2>
+            <h2>Ceramah Agama</h2>
             <p></p>
             <p>
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#ceramah">View details >></button>
+                <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#ceramah">Lihat details >></button>
                 <div id="ceramah" class="collapse">
                     <div class="table-responsive">          
                         <table class="table table-striped">
@@ -102,36 +102,40 @@
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4">
-            @foreach($khairat_icon as $key => $data)
+            @foreach($kariah_icon as $key => $data)
                 <img class="rounded-circle" src={{$data->image_url}} alt="Generic placeholder image" width="140" height="140">
             @endforeach
-            <h2>Khairat kematian</h2>
+            <h2>Kariah Masjid</h2>
             <p></p>
             <p>
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#khairat">View details >></button>
-                <div id="khairat" class="collapse">
-                    @foreach($khairat_comment as $key => $data)
+                <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#kariah">Lihat details >></button>
+                <div id="kariah" class="collapse">
+                    @foreach($kariah_comment as $key => $data)
                         <p>{{$data->comment}}</p>
                     @endforeach
 
                     <div class="btn-group" role="group" aria-label="Basic example">
                         
+                        <!--
                         <button type="button" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#sign_in">
                             Sign In
-                        </button>    
+                        </button>  
+
                         <button type="button" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#sign_up">
                             Sign Up
                         </button>
-                        
-                        
-                        <a class="btn btn-sm btn-outline-dark" href="home" role="button">Dashboard</a>
-                        <button type="button" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#khairat_downloads">
+                        -->
+
+                        <a class="btn btn-sm btn-outline-dark" href="home" role="button">Log Masuk</a>
+
+                        <button type="button" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#kariah_downloads">
                             Downloads
                         </button>
+                        
                     </div>
 
                     <!-- Modal download borang starts -->
-                    <div class="modal fade" id="khairat_downloads">
+                    <div class="modal fade" id="kariah_downloads">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
       
@@ -152,7 +156,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($khairat_borang as $key => $data)
+                                                @foreach($kariah_borang as $key => $data)
                                                     <tr>    
                                                         <th>{{$data->id}}</th>
                                                         <th><a href={{$data->path_location}}>{{$data->description}}</a></th>               
@@ -298,13 +302,13 @@
                                 <th>{{$data->masa_aktiviti}}</th>
                                 <th>{{$data->tempat_aktiviti}}</th> 
                                 <th>
-                                    <button type="button" class="btn btn-sm btn-outline-info" data-toggle="modal" data-target="#aktiviti">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#aktiviti_{{$key}}">
                                         Details
                                     </button>
 
                                     <!-- The Modal -->
-                                    <div class="modal fade" id="aktiviti">
-                                        <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal fade" id="aktiviti_{{$key}}">
+                                        <div class="modal-dialog modal-dialog-centered modal-lg">
                                             <div class="modal-content">
                     
                                                 <!-- Modal Header -->
@@ -315,7 +319,9 @@
                         
                                                 <!-- Modal body -->
                                                 <div class="modal-body">
-                                                
+                                                    <img class="center" src={{$data->gambar_aktiviti}} alt="Card image cap">   
+                                                    <br>
+                                                    <p>{{$data->desc_aktiviti}}</p>
                                                 </div>
                         
                                                 <!-- Modal footer -->
@@ -377,24 +383,18 @@
         <aside class="col-md-4 blog-sidebar">        
             <div class="p-3">
                 <p></p><p></p>
-                <h4 class="pb-3 mb-4 font-italic border-bottom">Archives</h4>
-                <ol class="list-unstyled mb-0">
-                    <li><a href="#">March 2014</a></li>
-                    <li><a href="#">February 2014</a></li>
-                    <li><a href="#">January 2014</a></li>
-                    <li><a href="#">December 2013</a></li>
-                    <li><a href="#">November 2013</a></li>
-                    <li><a href="#">October 2013</a></li>
-                    <li><a href="#">September 2013</a></li>
-                    <li><a href="#">August 2013</a></li>
-                    <li><a href="#">July 2013</a></li>
-                    <li><a href="#">June 2013</a></li>
-                    <li><a href="#">May 2013</a></li>
-                    <li><a href="#">April 2013</a></li>
-                </ol>
+                <h4 class="pb-3 mb-4 font-italic border-bottom">Facebook</h4>
+                
+                <div class="container">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMasjidBBSB&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+                        width="300" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media">
+                    </iframe>
+                </div>
+                
             </div>
         </aside><!-- /.blog-sidebar -->
         <!-- Sidebar ends -->
+        
     </div><!-- /.row -->
 </div><!-- /.container -->
 @endsection

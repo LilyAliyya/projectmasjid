@@ -10,7 +10,7 @@ class LaporanAktivitiController extends Controller
 {
     public function database()
     {
-        $laporan = DB::table('laporan_aktiviti')->orderBy('tarikh_laporan', 'desc')->paginate(2);
+        $laporan = DB::table('laporan_aktiviti')->orderBy('tarikh_laporan', 'desc')->paginate(5);
 
         return view('posts.laporanaktiviti', compact('laporan'));
     }

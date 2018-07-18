@@ -15,7 +15,7 @@ class VisiMisi extends Migration
     {
         Schema::create('visi_misi', function (Blueprint $table) {
             $table->increments('id');
-            $table->longtext('content_visimisi');
+            $table->string('content_visimisi');
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ class PencapaianMasjid extends Migration
     {
         Schema::create('pencapaian_masjid', function (Blueprint $table) {
             $table->increments('id');
-            $table->longtext('content_pencapaian');
+            $table->string('content_pencapaian');
             $table->timestamps();
         });
     }

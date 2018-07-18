@@ -12,7 +12,7 @@ class SenaraiAktivitiController extends Controller
     {
         //$aktiviti = DB::table('aktiviti_masjid')->whereMonth('tarikh_aktiviti', '05')->orderBy('tarikh_aktiviti', 'desc')->get();
 
-        $aktiviti = DB::table('aktiviti_masjid')->orderBy('tarikh_aktiviti', 'desc')->paginate(2);
+        $aktiviti = DB::table('aktiviti_masjid')->orderBy('tarikh_aktiviti', 'desc')->paginate(20);
 
         return view('posts.senaraiaktiviti', compact('aktiviti'));
     }

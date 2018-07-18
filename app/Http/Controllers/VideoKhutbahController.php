@@ -10,7 +10,7 @@ class VideoKhutbahController extends Controller
 {
     public function database()
     {
-        $khutbah = DB::table('video_khutbah')->orderBy('tarikh_khutbah', 'desc')->paginate(2);
+        $khutbah = DB::table('video_khutbah')->orderBy('tarikh_khutbah', 'desc')->paginate(10);
 
         return view('posts.videokhutbah', compact('khutbah'));
     }

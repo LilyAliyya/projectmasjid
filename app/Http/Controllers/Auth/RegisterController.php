@@ -48,11 +48,19 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
+        return Validator::make($data, [ 
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'namapemohon' => 'required|string|max:255',
+            'nomboric' => 'required|string|max:255|unique:users',
+            'curraddress' => 'required|string|max:255',
+            'homenumber' => 'required|string|max:255',
+            'mobilenumber' => 'required|string|max:255',
+            'maritalstatus' => 'required|string|in:single,married',
+            'occupation' => 'required|string|max:255',
+            'salary' => 'required|max:255',
         ]);
+
     }
 
     /**
@@ -64,9 +72,25 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'namapemohon' => $data['namapemohon'],
+            'nomboric' => $data['nomboric'],
+            'curraddress' => $data['curraddress'],
+            'homenumber' => $data['homenumber'],
+            'mobilenumber' => $data['mobilenumber'],
+            'maritalstatus' => $data['maritalstatus'],
+            'occupation' => $data['occupation'],
+            'salary' => $data['salary'],
         ]);
+
     }
+
+    /*
+    public function showregistrationform()
+    {
+        $salary = User::pluck('salary', 'id');
+        return view('auth.register', [ 'salary' => $salary]);
+    }
+    */
 }

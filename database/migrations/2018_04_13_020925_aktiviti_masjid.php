@@ -19,6 +19,8 @@ class AktivitiMasjid extends Migration
             $table->text('nama_aktiviti');
             $table->string('masa_aktiviti');
             $table->string('tempat_aktiviti');
+            $table->string('gambar_aktiviti');
+            $table->longtext('desc_aktiviti');
             $table->timestamps();
         });
     }

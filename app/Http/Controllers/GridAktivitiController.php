@@ -10,7 +10,7 @@ class GridAktivitiController extends Controller
 {
     public function database()
     {
-        $aktiviti = DB::table('aktiviti_masjid')->orderBy('tarikh_aktiviti', 'desc')->paginate(3);
+        $aktiviti = DB::table('aktiviti_masjid')->orderBy('tarikh_aktiviti', 'desc')->paginate(12);
 
         return view('posts.gridaktiviti', compact('aktiviti'));
     }

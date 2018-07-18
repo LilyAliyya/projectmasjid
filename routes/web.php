@@ -33,9 +33,16 @@ Route::get('/videokhutbah', 'VideoKhutbahController@database');
 
 Route::get('/kuliahharian', 'KuliahHarianController@database');
 
+Route::get('/jawatankuasa', 'JawatankuasaMasjidController@database');
+
+Route::get('/galerimasjid', 'GaleriMasjidController@database');
+
+Route::get('/galerifasiliti', 'GaleriFasilitiController@database');
+
 
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

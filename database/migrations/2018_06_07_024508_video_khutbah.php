@@ -17,7 +17,7 @@ class VideoKhutbah extends Migration
             $table->increments('id');
             $table->date('tarikh_khutbah');
             $table->string('tajuk_khutbah');
-            $table->longtext('isi_video');
+            $table->string('isi_video');
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ class SejarahPenubuhan extends Migration
     {
         Schema::create('sejarah_penubuhan', function (Blueprint $table) {
             $table->increments('id');
-            $table->longtext('content_penubuhan');
+            $table->string('content_penubuhan');
             $table->timestamps();
         });
     }
