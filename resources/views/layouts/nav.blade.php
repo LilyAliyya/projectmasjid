@@ -40,9 +40,9 @@
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KHUTBAH & CERAMAH</a>
+          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">KOLEKSI CERAMAH</a>
           <div class="dropdown-menu" aria-labelledby="dropdown09">
-            <a class="dropdown-item" href="videokhutbah">VIDEO KHUTBAH</a>
+            <a class="dropdown-item" href="videokhutbah">VIDEO CERAMAH</a>
             <a class="dropdown-item" href="kuliahharian">KULIAH HARIAN</a>
           </div>
         </li>
@@ -51,6 +51,7 @@
           <div class="dropdown-menu" aria-labelledby="dropdown09">
             <a class="dropdown-item" href="galerimasjid">SEKITAR MASJID</a>
             <a class="dropdown-item" href="galerifasiliti">FASILITI MASJID</a>
+            <a class="dropdown-item" href="videomasjid">VIDEO MASJID</a>
           </div>
         </li>
       </ul>

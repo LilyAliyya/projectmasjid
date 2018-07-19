@@ -34,10 +34,13 @@
                                 </h6>
                                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                                 <p>
-                                        <i class="fa fa-home mr-3"></i> Jalan 3/2, Fasa 3, Bandar Baru Sungai Buloh 42700
+                                        <i class="fa fa-home mr-3"></i> Masjid BBSB, Jalan 3/2, Fasa 3, Bandar Baru Sungai Buloh 42700
                                 </p>
                                 <p>
-                                        <i class="fa fa-phone mr-3"></i> 03-6157 2174
+                                        <i class="fa fa-phone mr-3"></i> 03-6157 2174 (Office)
+                                </p>
+                                <p>
+                                        <i class="fa fa fa-mobile mr-3"></i> 011-1023 2369 (Whatsapp)
                                 </p>
                         </div>
                         <!--/.Fourth column-->

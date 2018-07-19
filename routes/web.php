@@ -39,6 +39,8 @@ Route::get('/galerimasjid', 'GaleriMasjidController@database');
 
 Route::get('/galerifasiliti', 'GaleriFasilitiController@database');
 
+Route::get('/videomasjid', 'VideoMasjidController@database');
+
 
 
 
